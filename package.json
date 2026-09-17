@@ -1,0 +1,12 @@
+{
+  "name": "domus-salud-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web Domus Salud con formulario de contacto automático por correo.",
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}
