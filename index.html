@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#003A78">
+  <meta name="description" content="Selecciona tu acceso a Domus Salud: pacientes, profesionales o administración.">
+  <meta property="og:title" content="Domus Salud | Portal de acceso">
+  <meta property="og:image" content="/assets/logo-domus-salud.png">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <title>Domus Salud | Portal de acceso</title>
+  <script>
+    // Conservar enlaces de reuniones y formularios enviados ANTES de crear el portal.
+    // La portada no recoge tokens, ni los incorpora a estadísticas.
+    const p = new URLSearchParams(location.search);
+    if (p.has('reunion') || p.get('formulario') === 'paciente') {
+      location.replace('/web' + location.search + location.hash);
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/portal.css?v=2026-09-21-fase41">
+</head>
+<body>
+  <a class="skip" href="#accesos">Ir a los accesos</a>
+  <main class="portal" id="accesos">
+    <header class="portal-head">
+      <img class="brand-logo" src="/assets/logo-domus-salud.png" alt="Logo corporativo Domus Salud" width="130" height="158">
+      <p class="eyebrow">BIENVENIDO A DOMUS SALUD</p>
+      <h1>¿Cómo deseas ingresar?</h1>
+      <p>Selecciona tu perfil para continuar al espacio correspondiente.</p>
+    </header>
+    <nav class="portal-cards" aria-label="Seleccionar perfil de acceso">
+      <a class="access-card patient" href="/web?acceso=paciente" data-access="paciente">
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/><path d="M6 12h3l1.3-2.3 2.5 5 1.6-2.7H18"/></svg></span>
+        <span class="card-name">Paciente</span>
+        <span class="card-desc">Conoce los servicios, nuestro equipo y solicita una evaluación.</span>
+        <span class="card-link">Ir a la página web <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="access-card professional" href="/web?acceso=profesional" data-access="profesional">
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v5a6 6 0 0 0 12 0V3"/><path d="M4 3h4M16 3h4M12 14v3a4 4 0 0 0 8 0v-2"/><circle cx="20" cy="13" r="2"/></svg></span>
+        <span class="card-name">Profesional</span>
+        <span class="card-desc">Ingresa a tu perfil y herramientas de atención autorizadas.</span>
+        <span class="card-link">Acceso profesional <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="access-card administration" href="/web?acceso=administracion" data-access="administracion">
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 20 5v6c0 5-3 8.5-8 11-5-2.5-8-6-8-11V5l8-3Z"/><path d="m8.5 12 2.5 2.5 5-5"/></svg></span>
+        <span class="card-name">Administración</span>
+        <span class="card-desc">Accede al dashboard y a la gestión de Domus Salud.</span>
+        <span class="card-link">Acceso administrador <span aria-hidden="true">→</span></span>
+      </a>
+    </nav>
+    <p class="portal-footnote">La selección del perfil no otorga permisos. El personal debe iniciar sesión con sus credenciales.</p>
+    <footer><img src="/assets/logo-domus-header.png" alt="Domus Salud" width="34" height="42"><span>Domus Salud · Atención domiciliaria</span></footer>
+  </main>
+  <script src="/js/portal.js?v=2026-09-21-fase41" defer></script>
+</body>
+</html>
